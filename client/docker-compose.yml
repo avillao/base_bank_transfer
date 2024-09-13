@@ -1,0 +1,14 @@
+
+services:
+  bank-client:
+    container_name: 'bank-client'
+    image: 'bank-client'
+    env_file:
+      - ../.env
+    environment:
+      - TZ="America/Guayaquil"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '7010:7010'
